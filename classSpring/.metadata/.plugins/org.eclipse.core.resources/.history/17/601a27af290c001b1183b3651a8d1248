@@ -1,0 +1,14 @@
+package poly.service.impl;
+
+import org.apache.log4j.Logger;
+import org.springframework.stereotype.Service;
+
+import poly.service.IMovieService;
+
+@Service("MovieService")
+public class MovieService implements IMovieService{
+
+	private Logger log = Logger.getLogger(this.getClass());
+	
+
+}

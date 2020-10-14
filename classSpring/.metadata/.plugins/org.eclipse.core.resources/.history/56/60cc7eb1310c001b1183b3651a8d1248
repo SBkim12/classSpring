@@ -1,0 +1,9 @@
+package poly.service;
+
+import poly.dto.MovieDTO;
+
+public interface IFoodService {
+
+	int getMovieInfoFromWEB() throws Exception;
+	
+}

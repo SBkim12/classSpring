@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- JAVA와 연결할 Mapper 파일 설정 -->
+<mapper namespace="poly.persistance.mapper.IFoodMapper">
+		<!-- 복합키의 경우 시퀀스를 사용하면 KEY값인 SEQ의 중복 값이 들어갈수 있다. ex) AA 1 , BB 1 -->
+		<!-- 서브 쿼리는 무조건 테이블명을 alias로 바꿔야 한다!!! -->
+	<insert id="InsertFoodInfo" parameterType="FoodDTO">
+		
+
+
+	</insert>
+
+</mapper>

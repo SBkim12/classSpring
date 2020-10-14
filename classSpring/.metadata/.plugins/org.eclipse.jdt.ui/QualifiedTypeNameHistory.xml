@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="poly.dto.UserinfoDTO"/>
+<fullyQualifiedTypeName name="poly.dto.MailDTO"/>
+<fullyQualifiedTypeName name="oracle.sql.DATE"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="poly.util.EncryptUtil"/>
+<fullyQualifiedTypeName name="org.springframework.ui.ModelMap"/>
+<fullyQualifiedTypeName name="org.jsoup.nodes.Document"/>
+<fullyQualifiedTypeName name="org.jsoup.Jsoup"/>
+<fullyQualifiedTypeName name="javax.lang.model.util.Elements"/>
+<fullyQualifiedTypeName name="org.jsoup.select.Elements"/>
+<fullyQualifiedTypeName name="org.jsoup.nodes.Element"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="poly.util.DateUtil"/>
+<fullyQualifiedTypeName name="poly.util.CmmUtil"/>
+</qualifiedTypeNameHistroy>
