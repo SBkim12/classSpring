@@ -17,15 +17,29 @@
 
 	<!-- 오라클에서 메이븐 저장소에 제공을 하고 있지 않기 때문에, 메이븐 사설 저장소 사용함 -->
 	<repositories>
+		
 		<repository>
 			<id>oracle</id>
 			<name>ORACLE JDBC Repository</name>
 			<url>http://maven.jahia.org/maven2</url>
 		</repository>
+		
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+		
 	</repositories>
 
 	<dependencies>
 		
+		<!-- Kormoran 3.3.4 -->
+		<dependency>
+			<groupId>com.github.shin285</groupId>
+			<artifactId>KOMORAN</artifactId>
+			<version>3.3.4</version>
+		</dependency>
+				
 		<!-- OCR 구현을 위한 Tesseract4 라이브러리 다운로드 -->
 		<dependency>
 			<groupId>net.sourceforge.tess4j</groupId>
