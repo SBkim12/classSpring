@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- JAVA와 연결할 Mapper 파일 설정 -->
+<mapper namespace="poly.persistance.mapper.IBoardMapper">
+
+	<!-- 게시판 리스트 쿼리 -->
+	<select id="getBoardList" resultType="BoardDTO">
+		SELECT POST_NO, POST_TITLE,
+		REG_DT, REG_ID FROM BOARD
+	</select>
+
+
+	<!-- 글 등록 -->
+	<insert id="insertPost" parameterType="BoardDTO">
+		INSERT INTO BOARD(
+		POST_NO,
+		REG_ID,
+		POST_TITLE,
+		POST_CONTENT,
+		UPD_ID
+		)VALUES(
+		POST_SEQ.NEXTVAL,
+		#{reg_id},
+		#{post_title},
+		#{post_content},
+		#{reg_id}
+		)
+	</insert>
+
+	<select id="getBoardDetail" parameterType="BoardDTO"
+		resultType="BoardDTO">
+		SELECT
+		POST_NO,
+		POST_TITLE,
+		POST_CONTENT,
+		REG_ID
+		FROM
+		BOARD
+		WHERE
+		POST_NO=#{post_no}
+	</select>
+	<update id="updatePost" parameterType="BoardDTO">
+		UPDATE BOARD
+		SET
+			POST_TITLE=#{post_title},
+			POST_CONTENT=#{post_content}
+		WHERE
+			POST_NO=#{post_no}
+	</update>
+	<delete id="deletePost" parameterType="BoardDTO">
+		DELETE FROM BOARD
+		WHERE
+			POST_NO=#{post_no}
+	</delete>
+
+
+</mapper>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- JAVA와 연결할 Mapper 파일 설정 -->
+<mapper namespace="poly.persistance.mapper.IUserMapper">
+
+	<!-- 회원가입 -->
+	<insert id="insertUserInfo" parameterType="UserInfoDTO">
+	INSERT INTO USER_INFO
+		(
+			USER_ID,
+			USER_NAME,
+			USER_PWD,
+			EMAIL,
+			ADDR1,
+			ADDR2,
+			REG_ID,
+			REG_DT,
+			CHG_ID,
+			CHG_DT
+		)
+	VALUES(
+			#{user_id},	 
+			#{user_name},	
+			#{user_pwd},	
+			#{email},	
+			#{addr1},	
+			#{addr2},	
+			#{user_id},	
+			SYSDATE,
+			#{user_id},	
+			SYSDATE
+	)
+	</insert>
+	
+	<!-- 이메일 중복 확인 -->
+	<select id="getUserExists" parameterType="UserinfoDTO" resultType="UserinfoDTO">
+		SELECT DECODE(COUNT(1), 0, 'N', 'Y') AS EXISTS_YN
+			FROM USER_INFO
+		WHERE EMAIL= #{email}
+	</select>
+
+	<select id="getUserInfo" parameterType="UserinfoDTO"
+		resultType="UserinfoDTO">
+		SELECT
+		USER_ID,
+		USER_NAME,
+		EMAIL
+		FROM
+		USER_INFO
+		WHERE USER_ID = #{user_id} AND USER_PWD = #{user_pwd}
+	</select>
+
+	<!-- ajax -->
+	<select id="getUserList" parameterType="UserinfoDTO" resultType="UserinfoDTO">
+		SELECT
+			USER_ID,
+			USER_NAME,
+			REG_DT,
+			REG_ID
+		FROM
+			USER_INFO
+		WHERE
+			USER_NAME LIKE '%'||#{user_name}||'%'
+	</select>
+</mapper>
